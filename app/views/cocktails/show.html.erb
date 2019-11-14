@@ -1,0 +1,14 @@
+<h1>Découvrez la recette de votre cocktail</h1>
+
+<%= @cocktail.name %>
+
+<% @doses.each do |dose| %>
+<p>
+<%= dose.ingredient.name %>
+<%= dose.description %>
+</p>
+<% end %>
+
+<p> <%= link_to "Regardez la recette précise de votre cocktail", cocktail_doses_path(@cocktail) %> </p> <br>
+
+<p> <%= link_to "Retournez voir les autres cocktails", cocktails_path %> </p>
