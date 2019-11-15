@@ -20,7 +20,10 @@ class DosesController < ApplicationController
     # we need `cocktail_id` to associate dose with corresponding cocktail
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose.cocktail = @cocktail
-
+    @name_ingredients = []
+    Ingredient.all.each do |ingredient|
+      @name_ingredients << ingredient.name
+    end
     @ingredient_param = params["dose"]["ingredient"]
     @ingredient_array = Ingredient.where(name: @ingredient_param)
     @ingredient_array.each { |ingredient| @dose.ingredient = ingredient }
