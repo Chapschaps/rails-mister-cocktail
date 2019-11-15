@@ -1,6 +1,10 @@
 <h1>Découvrez la recette de votre cocktail</h1>
 
 <%= @cocktail.name %>
+<% if @cocktail.photo.attached? %>
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 
 <% @doses.each do |dose| %>
 <p>
