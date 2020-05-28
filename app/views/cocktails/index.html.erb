@@ -1,5 +1,11 @@
 <h1>Mister Cocktail</h1>
 
+ <form class="form-inline">
+  <label for="search"></label><br>
+  <input type="text" id="search" name="search" placeholder="Search for a cocktail"><br>
+  <input type="submit" value="Submit">
+</form>
+
 <% @cocktails.each do |cocktail| %>
 <h2>
   <%= link_to cocktail.name, cocktail_path(cocktail) %>
